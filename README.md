@@ -11,13 +11,14 @@
 </header>
 <body>
   
-   <h2 class="Brate">Browse rate: 10bob/hour</h2>
+   <h2 class="BR">Browse rate: 10bob/hour</h2>
     <h2 class="formtitle">M-Pesa Payment</h2>
+    <h3 class="kindly">Kindly fill in the details below </h3>
 
   <main> 
     
 
-<form id="paymentForm">
+<form id="paymentForm" method="post">
   <div class='glow'>
   <label for="phoneNumber">Mobile Nudmber:</label>
 <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required><br><br></div>
@@ -47,10 +48,11 @@
         or
      Whatsapp us +254790712521. 
     </p>
-    <footer>
+
+  </section>
+  <footer>
       © moonlight connections 2024
     </footer>
-  </section>
   
 </body>
 <style>
@@ -358,12 +360,16 @@ bottom: 3vh;
   top: 2rem;
   font-size: 35px;
   text-opacity: 70%;
-  background: linear-gradient(
-    to right,
-    #000,
-    #000,
-    #000
-  )
+  background: transparent;
+}
+.BR {
+text-align: center;
+color:lightgreen;
+}
+.kindly {
+text-align: center;
+font-size: 20px;
+colour: lightgreen;
 }
 
 
