@@ -12,14 +12,14 @@
 <body>
   
    <h2 class="Brate">Browse rate: 10bob/hour</h2>
-    <h2 class"formtitle">M-Pesa Payment</h2>
+    <h2 class="formtitle">M-Pesa Payment</h2>
 
   <main> 
     
 
 <form id="paymentForm">
   <div class='glow'>
-  <label for="phoneNumber">Mobile Number:</label>
+  <label for="phoneNumber">Mobile Nudmber:</label>
 <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required><br><br></div>
   
   <div class="inp2">
