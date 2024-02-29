@@ -11,9 +11,9 @@
 </header>
 <body>
   
-   <h2 class="BR">Browse rate: 10bob/hour</h2>
+   <h2 class="BR">Browse rate: 🔟bob per hour</h2>
     <h2 class="formtitle">M-Pesa Payment</h2>
-    <h3 class="kindly">Kindly fill in the details below </h3>
+    <h3 class="kindly">Kindly fill in the details below⤵️ </h3>
 
   <main> 
     
