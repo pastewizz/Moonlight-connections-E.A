@@ -58,7 +58,7 @@ body{
   font-family:system-ui;
   height: flex;
   margin-top:0;
-  background-image: url("https://www.needpix.com/photo/675994/");
+  background-image: url("https://storage.needpix.com/rsynced_images/planet-1519089_1280.jpg");
   color:white;
   display:grid;
   place-items:center;
