@@ -209,6 +209,7 @@ input[type="checkbox"] {
 h2 {
   font-size: 25px;
   margin-top: 3rem;
+  border: none;
 }
 
 label {
@@ -228,7 +229,7 @@ a {
 
 button[type="submit"] {
   display: block;
-  width: 100%;
+  width: 70%;
   border-radius: 50px;
   height: 50px;
   margin: 25px auto;
@@ -325,11 +326,13 @@ text-align: center;
 font-weight: bold;
 font-size: 24px;
 border: none;
+bottom: 3vh;
 }
 
 .boutt {
   color: #white;
   font-weight: bold;
+  margin: 18px auto;
   font-style: italic;
   background: linear-gradient(
     to right,
@@ -345,12 +348,13 @@ border: none;
 .bb {
   color: white;
   text-align: center;
+  top: 25px;
   font-size: 35px;
   text-opacity: 70%;
   background: linear-gradient(
     to right,
     #000,
-  #86d438,
+    #000,
     #000
   )
 }
