@@ -320,6 +320,13 @@ main {
   top: 2rem;
 }
 
+Header {
+text-align: center;
+font-weight: bold;
+font-size: 24px;
+border: none;
+}
+
 .boutt {
   color: #white;
   font-weight: bold;
@@ -337,13 +344,15 @@ main {
 }
 .bb {
   color: white;
+  text-align: center;
+  font-size: 35px;
   text-opacity: 70%;
   background: linear-gradient(
     to right,
     #000,
   #86d438,
     #000
-  );
+  )
 }
 
 
