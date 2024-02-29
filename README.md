@@ -58,7 +58,7 @@ body{
   font-family:system-ui;
   height: flex;
   margin-top:0;
-  background-color:black;
+  background-image: url("https://www.needpix.com/photo/675994/");
   color:white;
   display:grid;
   place-items:center;
