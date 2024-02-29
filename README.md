@@ -12,7 +12,7 @@
 <body>
   
    <h2 class="Brate">Browse rate: 10bob/hour</h2>
-    <h2>M-Pesa Payment</h2>
+    <h2 class"formtitle">M-Pesa Payment</h2>
 
   <main> 
     
@@ -47,6 +47,9 @@
         or
      Whatsapp us +254790712521. 
     </p>
+    <footer>
+      © moonlight connections 2024
+    </footer>
   </section>
   
 </body>
@@ -320,12 +323,16 @@ input:focus {
 main {
   top: 2rem;
 }
+.formtitle {
+text-align: center;
+border-bottom: none;
+}
 
 Header {
 text-align: center;
 font-weight: bold;
 font-size: 24px;
-border: none;
+border-bottom: none;
 bottom: 3vh;
 }
 
@@ -348,7 +355,7 @@ bottom: 3vh;
 .bb {
   color: white;
   text-align: center;
-  top: 25px;
+  top: 2rem;
   font-size: 35px;
   text-opacity: 70%;
   background: linear-gradient(
@@ -388,4 +395,4 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
   this.submit();
 });
 </script>
-©Moonlight connections E.A
+
