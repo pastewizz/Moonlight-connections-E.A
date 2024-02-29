@@ -11,7 +11,7 @@
 </header>
 <body>
   
-   <h2 class="BR">Browse rate: 🔟bob per hour</h2>
+   <h2 class="BR">Browsing rate: @10bob per hour</h2>
     <h2 class="formtitle">M-Pesa Payment</h2>
     <h3 class="kindly">Kindly fill in the details below⤵️ </h3>
 
@@ -20,8 +20,8 @@
 
 <form id="paymentForm" method="post">
   <div class='glow'>
-  <label for="phoneNumber">Mobile Nudmber:</label>
-<input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required><br><br></div>
+  <label for="phoneNumber">Mobile Number:</label>
+<input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required ><br><br></div>
   
   <div class="inp2">
   <div class='glow'>
@@ -44,9 +44,9 @@
   <section class="boutt">
     <p id="boutus">
       For inquiries kindly reach us through,
-      moonlightconnectus@gmail.com
+      moonlightconnections@gmail.com
         or
-     Whatsapp us +254790712521. 
+     Whatsapp us through +254790712521. 
     </p>
 
   </section>
