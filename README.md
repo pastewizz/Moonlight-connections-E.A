@@ -405,10 +405,9 @@ padding: 30px;
 
 
 
-  .image {
-  
-  border-radius: 20px;
+  .img {
   top: 15px;
+  left: 40px;
   }
   
   footer {
