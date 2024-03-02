@@ -336,6 +336,7 @@ main {
 .formtitle {
 text-align: center;
 border-bottom: none;
+top: 20px;
 color: black;
 }
 
@@ -394,6 +395,7 @@ background: #fff;
 
   .image {
   position: relative;
+  left: 25px
   padding-left: 2px;
   }
   
