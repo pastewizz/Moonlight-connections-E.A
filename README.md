@@ -18,11 +18,11 @@
 <section class="top">
     <h2 class="formtitle">Lipa na</h2></section>
     <section class="image">
-      <img src="1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
+      <img src="1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="50" />
 </section>
 </section>
   
-
+<h3> Enter amount and number</h2>
   <main> 
     
 
@@ -396,7 +396,8 @@ display: flex;
 border-radius: 20px;
 width: 80%;
 padding: 1rem;
-border-top-right: 1px lightgreen;
+left: 70px;
+
 
 }
 
