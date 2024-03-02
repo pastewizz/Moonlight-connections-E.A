@@ -334,7 +334,7 @@ main {
   top: 2rem;
 }
 .formtitle {
-text-align: center;
+text-align: 
 border-bottom: none;
 top: 20px;
 color: black;
