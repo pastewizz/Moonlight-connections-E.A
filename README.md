@@ -393,14 +393,14 @@ display: inline-block;
 }
 
 .top {
-top: 70px;
+top: 160px;
 }
 
 
 
   .image {
   position: flex;
-  left: 2rem;
+  left: 200px;
   }
   
   footer {
