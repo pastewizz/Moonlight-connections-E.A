@@ -389,6 +389,7 @@ colour: lightgreen;
 
 .lipa {
 background: #fff;
+display: inline;
 }
 
 
@@ -396,9 +397,7 @@ background: #fff;
 
 
   .image {
-  position: relative;
-  left: 40px;
-  bottom: 20px;
+  position: flex;
   }
   
   footer {
