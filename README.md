@@ -334,10 +334,10 @@ main {
   top: 2rem;
 }
 .formtitle {
-text-align: 
+text-align: center;
 border-bottom: none;
 color: black;
-text-align: center;
+
 }
 
 Header {
@@ -390,7 +390,7 @@ colour: lightgreen;
 
 .lipa {
 background: #fff;
-display: relative;
+display: flex;
 border-radius: 20px;
 width: 50%;
 }
@@ -400,7 +400,7 @@ width: 50%;
 
 
   .image {
-  items-align: center;
+  item-align: center;
   
   }
   
