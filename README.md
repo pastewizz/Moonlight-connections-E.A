@@ -337,6 +337,7 @@ main {
 text-align: center;
 border-bottom: none;
 color: black;
+font-size: 35px;
 
 }
 
@@ -392,7 +393,9 @@ colour: lightgreen;
 background: #fff;
 display: flex;
 border-radius: 20px;
-width: 50%;
+width: 80%;
+padding: 2rem;
+
 }
 
 
@@ -401,6 +404,7 @@ width: 50%;
 
   .image {
   item-align: center;
+  border-radius: 20px;
   
   }
   
