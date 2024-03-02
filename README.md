@@ -389,16 +389,18 @@ colour: lightgreen;
 
 .lipa {
 background: #fff;
-display: inline;
-margin-left: 30vh;
+display: inline-block;
 }
 
-
+.top {
+top: 70px;
+}
 
 
 
   .image {
   position: flex;
+  left: 2rem;
   }
   
   footer {
