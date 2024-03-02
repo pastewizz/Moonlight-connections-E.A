@@ -338,6 +338,7 @@ text-align: center;
 border-bottom: none;
 color: black;
 font-size: 50px;
+margin-right: 20px;
 
 }
 
@@ -395,6 +396,7 @@ display: flex;
 border-radius: 20px;
 width: 80%;
 padding: 1rem;
+border-top-right: 1px lightgreen;
 
 }
 
@@ -405,7 +407,7 @@ padding: 1rem;
   .image {
   
   border-radius: 20px;
-  
+  top: 15px;
   }
   
   footer {
