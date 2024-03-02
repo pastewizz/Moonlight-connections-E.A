@@ -389,7 +389,7 @@ colour: lightgreen;
 
 .lipa {
 background: #fff;
-display: inline;
+display: inline-block;
 }
 
 
