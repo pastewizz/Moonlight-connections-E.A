@@ -399,6 +399,10 @@ background: #fff;
   padding-left: 2px;
   }
   
+  footer {
+  text-align: center;
+  }
+  
 </style>
 
 <script>
