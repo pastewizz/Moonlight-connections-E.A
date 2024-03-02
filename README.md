@@ -337,6 +337,7 @@ main {
 text-align: 
 border-bottom: none;
 color: black;
+text-align: center;
 }
 
 Header {
@@ -391,17 +392,16 @@ colour: lightgreen;
 background: #fff;
 display: relative;
 border-radius: 20px;
+width: 50%;
 }
 
-.top {
-top: 160px;
-}
+
 
 
 
   .image {
-  position: flex;
-  left: 200px;
+  items-align: center;
+  
   }
   
   footer {
