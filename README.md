@@ -29,12 +29,12 @@
 <form id="paymentForm" method="post" action="./stk_initiate.php">
   <div class='glow'>
   <label for="phoneNumber">Mobile Number:</label>
-<input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required ><br><br></div>
+<input type="tel" id="phoneNumber" name="phoneNumber" placeholder="07xxxxxxxx" maxlength="10" required ><br><br></div>
   
   <div class="inp2">
   <div class='glow'>
   <label for="amount">Amount (10 and above):</label>
-<input type="number" id="amount" name="amount" minlength="10" required><br><br></div>
+<input type="number" id="amount" name="amount" placeholder="Enter amount" minlength="10" required><br><br></div>
   </div>
   
   <button type="submit" class="custom-btn btn-13">Pay</button>
