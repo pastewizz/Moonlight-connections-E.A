@@ -13,7 +13,7 @@
   
    <h2 class="BR">Browsing rate: @10bob per hour</h2>
     
-  <img src="images/1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
+  <img src="1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
   <h2 class="formtitle">Payment</h2>
     <h3 class="kindly">Kindly fill in the details below⤵️ </h3>
 
