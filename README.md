@@ -337,7 +337,7 @@ main {
 text-align: center;
 border-bottom: none;
 color: black;
-font-size: 35px;
+font-size: 50px;
 
 }
 
@@ -394,7 +394,7 @@ background: #fff;
 display: flex;
 border-radius: 20px;
 width: 80%;
-padding: 2rem;
+padding: 1rem;
 
 }
 
@@ -403,7 +403,7 @@ padding: 2rem;
 
 
   .image {
-  item-align: center;
+  
   border-radius: 20px;
   
   }
