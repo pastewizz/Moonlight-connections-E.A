@@ -388,12 +388,12 @@ colour: lightgreen;
   }
 
 .lipa {
-background: #333;
+background: #fff;
 }
 
 
   .image {
-  position: absolute;
+  position: relative;
   padding-left: 2px;
   }
   
