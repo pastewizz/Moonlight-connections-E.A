@@ -389,7 +389,8 @@ colour: lightgreen;
 
 .lipa {
 background: #fff;
-display: inline-block;
+display: relative;
+border-radius: 20px;
 }
 
 .top {
