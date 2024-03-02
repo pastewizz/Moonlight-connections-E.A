@@ -13,14 +13,14 @@
   
    <h2 class="BR">Browsing rate: @10bob per hour</h2>
     
-  <img src="./images/1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
+  <img src="images/1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
   <h2 class="formtitle">Payment</h2>
     <h3 class="kindly">Kindly fill in the details below⤵️ </h3>
 
   <main> 
     
 
-<form id="paymentForm" method="post">
+<form id="paymentForm" method="post" action=">
   <div class='glow'>
   <label for="phoneNumber">Mobile Number:</label>
 <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required ><br><br></div>
