@@ -11,9 +11,16 @@
 </header>
 <body>
   
-   <h2 class="BR">Browsing rate: @10bob per hour</h2>
-    <h2 class="formtitle">Lipa na</h2><img src="1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
-  
+    
+<h2 class="BR">Browsing rate: @10bob per hour</h2>
+
+<section class="lipa">
+<section class="top">
+    <h2 class="formtitle">Lipa na</h2></section>
+    <section class="image">
+      <img src="1200px-M-PESA_LOGO-01.svg.png" class="mr-3" height="75" />
+</section>
+</section>
   
 
   <main> 
@@ -329,6 +336,7 @@ main {
 .formtitle {
 text-align: center;
 border-bottom: none;
+color: black;
 }
 
 Header {
@@ -377,6 +385,18 @@ colour: lightgreen;
 
 .M {
   color: Black;
+  }
+
+.lipa {
+background: #333;
+}
+
+
+  .image {
+  position: absolute;
+  padding-left: 2px;
+  }
+  
 </style>
 
 <script>
