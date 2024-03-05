@@ -12,7 +12,7 @@
 <body>
   <div class="rates>
   <h2 class="BT"> Browsing rates:</h2>
-<ul>    
+<ul class="BR">    
 <li> sh10 =1hour </li>
 <li> sh20 =2hours </li>  
 <li> sh30 =3hours</li>
@@ -444,38 +444,35 @@ padding: 30px;
   
 </style>
 
-<script>
-
-document.getElementById('paymentForm').addEventListener('submit', function(event) {
+<script> 
+  document.getElementById('paymentForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
-  
+
   // Get input values
   var username = document.getElementById('username').value;
-  var phoneNumber = document.getElementById('phoneNumber').value;
+  var phone = document.getElementById('phone').value;
   var amount = document.getElementById('amount').value;
-  
+
   // Check if username is filled and at least 4 characters long
   if (username.length < 4) {
-    alert('Username must be at least 4 characters long.');
+    document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
+    document.getElementById('usernameAvailability').classList.add('invalid-feedback');
     return;
   }
-  
-  // Check if mobile number has 10 characters
-  if (phoneNumber.length !== 10) {
-    alert('Mobile number must be 10 digits long.');
+
+  // Check if phone number has 10 characters
+  if (phone.length !== 10) {
+    alert("Mobile number must be 10 digits long.");
     return;
   }
 
   // Check if amount is 10 or above
-  if (amount < 10) {
-    alert('Amount must be 10 or above.');
+  if (parseInt(amount) < 10) {
+    alert("Amount must be 10 or above.");
     return;
   }
-  
-  // Generate unique ID for username (replace with your unique ID generation logic)
-  var uniqueId = generateUniqueId();
-  
-  // Pass user data and unique ID to backend script
+
+  // Send data to backend script
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'backend_script.php', true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -485,19 +482,16 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
       // Optionally, redirect user to a success page or display a success message
     } else {
       console.error('Request failed:', xhr.statusText);
-      // Optionally, display an error message to the user
+      // Display an error message to the user
+      alert('Failed to submit form. Please try again later.');
     }
   };
   xhr.onerror = function() {
     console.error('Request failed');
-    // Optionally, display an error message to the user
+    // Display an error message to the user
+    alert('Failed to submit form. Please check your internet connection and try again.');
   };
-  xhr.send('username=' + encodeURIComponent(username) + '&phoneNumber=' + encodeURIComponent(phoneNumber) + '&amount=' + encodeURIComponent(amount) + '&uniqueId=' + encodeURIComponent(uniqueId));
+  xhr.send('username=' + encodeURIComponent(username) + '&phone=' + encodeURIComponent(phone) + '&amount=' + encodeURIComponent(amount));
 });
 
-// Function to generate unique ID (replace with your unique ID generation logic)
-function generateUniqueId() {
-  // Example: Generate unique ID based on timestamp
-  return 'UID_' + Date.now();
-}
       </script>
