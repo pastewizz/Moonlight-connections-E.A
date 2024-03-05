@@ -29,10 +29,13 @@
     
 
 <form id="paymentForm" method="post" action="./stk_initiate.php">
+  
  <div class='glow'>
   <label for="username">Username:(important*)</label>
     <input type="text" id="username" name="username" placeholder="create username"><br><br>
+   <div id="usernameAvailability"></div> 
  </div>
+ 
   <div class='glow'>
   <label for="phoneNumber">Mobile Number:</label>
 <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="07xxxxxxxx" maxlength="10" required ><br><br></div>
@@ -380,6 +383,16 @@ bottom: 3vh;
   text-opacity: 70%;
   background: transparent;
 }
+
+.valid-feedback {
+  color: green;
+}
+
+.invalid-feedback {
+  color: red;
+}
+
+
 .BT {
 text-align: center;
 color: #88f4ff;
@@ -431,6 +444,7 @@ padding: 30px;
 <script>
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
+
   
   // Get username input value
   var username = document.getElementById('username').value;
@@ -451,6 +465,13 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
         if (response.available) {
           document.getElementById('usernameAvailability').innerText = 'Username available';
           document.getElementById('usernameAvailability').classList.add('valid-feedback');
+          // Generate unique ID (replace with actual logic)
+          var userId = generateUniqueId(username);
+          // Store username and unique ID (replace with actual storage mechanism)
+          localStorage.setItem('username', username);
+          localStorage.setItem('userId', userId);
+          // Slide the input field and display previous username
+          slideAndDisplayPreviousUsername();
         } else {
           document.getElementById('usernameAvailability').innerText = 'Username unavailable';
           document.getElementById('usernameAvailability').classList.add('invalid-feedback');
@@ -465,7 +486,22 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
   xhr.send(JSON.stringify({ username: username }));
 });
 
-  
+function slideAndDisplayPreviousUsername() {
+  // Slide the input field to the right and hide it
+  document.getElementById('username').style.transform = 'translateX(200%)';
+  document.getElementById('username').style.opacity = '0';
+  // Display the previous username
+  var previousUsername = localStorage.getItem('username');
+  document.getElementById('usernameAvailability').innerHTML = 'User: ' + previousUsername;
+  document.getElementById('usernameAvailability').style.display = 'block';
+}
+
+// Function to generate unique ID (replace with actual logic)
+function generateUniqueId(username) {
+  // Example: Generate unique ID based on username (e.g., hash function)
+  return 'UID_' + username.length;
+}
+
   var phoneNumber = document.getElementById("phoneNumber").value;
   var amount = document.getElementById("amount").value;
 
