@@ -10,10 +10,12 @@
 <div class='glow'>Welcome to <span class="M">Moonlight</span> WiFi</div>
 </header>
 <body>
-  
+  <h2 class="BT"> Browsing rates:</h2>
     
-<h2 class="BR">Browsing rate: @10bob per hour</h2>
-
+<h2 class="BR"> sh10 =1hour</h2>
+<h2 class="BR"> sh20 =2hours</h2>
+<h2 class="BR"> sh30 =3hours</h2>
+<h2 class="BR"> etc...</h2>
 <section class="lipa">
 <section class="top">
     <h2 class="formtitle">Lipa na</h2></section>
@@ -378,9 +380,15 @@ bottom: 3vh;
   text-opacity: 70%;
   background: transparent;
 }
+.BT {
+text-align: center;
+color: #88f4ff;
+text-decoration: underline #fff;
+}
+
 .BR {
 text-align: center;
-color:lightgreen;
+color:white;
 }
 .kindly {
 text-align: center;
@@ -421,8 +429,42 @@ padding: 30px;
 </style>
 
 <script>
-document.getElementById("paymentForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Get username input value
+  var username = document.getElementById('username').value;
+  
+  // Check if username is filled and at least 4 characters long
+  if (username.length < 4) {
+    document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
+    document.getElementById('usernameAvailability').classList.add('invalid-feedback');
+    return;
+  }
+  
+  // Check username availability via AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        if (response.available) {
+          document.getElementById('usernameAvailability').innerText = 'Username available';
+          document.getElementById('usernameAvailability').classList.add('valid-feedback');
+        } else {
+          document.getElementById('usernameAvailability').innerText = 'Username unavailable';
+          document.getElementById('usernameAvailability').classList.add('invalid-feedback');
+        }
+      } else {
+        console.error('Error checking username availability:', xhr.status);
+      }
+    }
+  };
+  xhr.open('POST', '/check-username', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({ username: username }));
+});
+
   
   var phoneNumber = document.getElementById("phoneNumber").value;
   var amount = document.getElementById("amount").value;
