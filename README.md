@@ -10,12 +10,15 @@
 <div class='glow'>Welcome to <span class="M">Moonlight</span> WiFi</div>
 </header>
 <body>
+  <div class="rates>
   <h2 class="BT"> Browsing rates:</h2>
-    
-<h2 class="BR"> sh10 =1hour</h2>
-<h2 class="BR"> sh20 =2hours</h2>
-<h2 class="BR"> sh30 =3hours</h2>
-<h2 class="BR"> etc...</h2>
+<ul>    
+<li> sh10 =1hour </li>
+<li> sh20 =2hours </li>  
+<li> sh30 =3hours</li>
+ etc...</li>
+</ul>
+  </div>
 <section class="lipa">
 <section class="top">
     <h2 class="formtitle">Lipa na</h2></section>
@@ -442,112 +445,59 @@ padding: 30px;
 </style>
 
 <script>
+
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
-
   
-  // Get username input value
+  // Get input values
   var username = document.getElementById('username').value;
+  var phoneNumber = document.getElementById('phoneNumber').value;
+  var amount = document.getElementById('amount').value;
   
   // Check if username is filled and at least 4 characters long
   if (username.length < 4) {
-    document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
-    document.getElementById('usernameAvailability').classList.add('invalid-feedback');
+    alert('Username must be at least 4 characters long.');
     return;
   }
   
-  // Check username availability via AJAX
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        if (response.available) {
-          document.getElementById('usernameAvailability').innerText = 'Username available';
-          document.getElementById('usernameAvailability').classList.add('valid-feedback');
-          // Generate unique ID (replace with actual logic)
-          var userId = generateUniqueId(username);
-          // Store username and unique ID (replace with actual storage mechanism)
-          localStorage.setItem('username', username);
-          localStorage.setItem('userId', userId);
-          // Slide the input field and display previous username
-          slideAndDisplayPreviousUsername();
-        } else {
-          document.getElementById('usernameAvailability').innerText = 'Username unavailable';
-          document.getElementById('usernameAvailability').classList.add('invalid-feedback');
-        }
-      } else {
-        console.error('Error checking username availability:', xhr.status);
-      }
-    }
-  };
-  xhr.open('POST', '/check-username', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify({ username: username }));
-});
-
-function slideAndDisplayPreviousUsername() {
-  // Slide the input field to the right and hide it
-  document.getElementById('username').style.transform = 'translateX(200%)';
-  document.getElementById('username').style.opacity = '0';
-  // Display the previous username
-  var previousUsername = localStorage.getItem('username');
-  document.getElementById('usernameAvailability').innerHTML = 'User: ' + previousUsername;
-  document.getElementById('usernameAvailability').style.display = 'block';
-}
-
-// Function to generate unique ID (replace with actual logic)
-function generateUniqueId(username) {
-  // Example: Generate unique ID based on username (e.g., hash function)
-  return 'UID_' + username.length;
-}
-
-  var phoneNumber = document.getElementById("phoneNumber").value;
-  var amount = document.getElementById("amount").value;
-
   // Check if mobile number has 10 characters
   if (phoneNumber.length !== 10) {
-    alert("Mobile number must be 10 digits long.");
+    alert('Mobile number must be 10 digits long.');
     return;
   }
 
   // Check if amount is 10 or above
   if (amount < 10) {
-    alert("Amount must be 10 or above.");
+    alert('Amount must be 10 or above.');
     return;
   }
-
-  // Proceed with form submission if requirements are met
-  this.submit();
+  
+  // Generate unique ID for username (replace with your unique ID generation logic)
+  var uniqueId = generateUniqueId();
+  
+  // Pass user data and unique ID to backend script
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'backend_script.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      console.log('Success:', xhr.responseText);
+      // Optionally, redirect user to a success page or display a success message
+    } else {
+      console.error('Request failed:', xhr.statusText);
+      // Optionally, display an error message to the user
+    }
+  };
+  xhr.onerror = function() {
+    console.error('Request failed');
+    // Optionally, display an error message to the user
+  };
+  xhr.send('username=' + encodeURIComponent(username) + '&phoneNumber=' + encodeURIComponent(phoneNumber) + '&amount=' + encodeURIComponent(amount) + '&uniqueId=' + encodeURIComponent(uniqueId));
 });
-</script>
-<script>
-  document.getElementById('paymentForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      // Capture user input
-      var username = document.getElementById('username').value;
-      var phone = document.getElementById('phone').value;
-      var amount = document.getElementById('amount').value;
-      
-      // Pass user data to backend script
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'backend_script.php', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          console.log('Success:', xhr.responseText);
-          // Optionally, redirect user to a success page or display a success message
-        } else {
-          console.error('Request failed:', xhr.statusText);
-          // Optionally, display an error message to the user
-        }
-      };
-      xhr.onerror = function() {
-        console.error('Request failed');
-        // Optionally, display an error message to the user
-      };
-      xhr.send('username=' + encodeURIComponent(username) + '&phone=' + encodeURIComponent(phone) + '&amount=' + encodeURIComponent(amount));
-    });
-</script>
 
+// Function to generate unique ID (replace with your unique ID generation logic)
+function generateUniqueId() {
+  // Example: Generate unique ID based on timestamp
+  return 'UID_' + Date.now();
+}
+      </script>
