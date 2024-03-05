@@ -27,6 +27,10 @@
     
 
 <form id="paymentForm" method="post" action="./stk_initiate.php">
+ <div class='glow'>
+  <label for="username">Username:(important*)</label>
+    <input type="text" id="username" name="username" placeholder="create username"><br><br>
+ </div>
   <div class='glow'>
   <label for="phoneNumber">Mobile Number:</label>
 <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="07xxxxxxxx" maxlength="10" required ><br><br></div>
@@ -438,5 +442,34 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
   // Proceed with form submission if requirements are met
   this.submit();
 });
+</script>
+<script>
+  document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Capture user input
+      var username = document.getElementById('username').value;
+      var phone = document.getElementById('phone').value;
+      var amount = document.getElementById('amount').value;
+      
+      // Pass user data to backend script
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'backend_script.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          console.log('Success:', xhr.responseText);
+          // Optionally, redirect user to a success page or display a success message
+        } else {
+          console.error('Request failed:', xhr.statusText);
+          // Optionally, display an error message to the user
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Request failed');
+        // Optionally, display an error message to the user
+      };
+      xhr.send('username=' + encodeURIComponent(username) + '&phone=' + encodeURIComponent(phone) + '&amount=' + encodeURIComponent(amount));
+    });
 </script>
 
