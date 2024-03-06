@@ -1,4 +1,4 @@
-
+ok
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -464,18 +464,16 @@ padding: 30px;
   // Check if username is filled and at least 4 characters long
   if (username.length < 4) {
     document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
-    document.getElementById('usernameAvailability').classList.add('invalid-feedback');
-    return;
   }
 
   // Check if phone number has 10 characters
-  if (phone.length !== 10) {
+  if (phoneNumber.length !== 10) {
     alert("Mobile number must be 10 digits long.");
     return;
   }
 
   // Check if amount is 10 or above
-  if (parseInt(amount) < 10) {
+  if (amount < 10) {
     alert("Amount must be 10 or above.");
     return;
   }
