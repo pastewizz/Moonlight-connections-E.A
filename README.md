@@ -10,14 +10,16 @@
 <div class='glow'>Welcome to <span class="M">Moonlight</span> WiFi</div>
 </header>
 <body>
-  <div class="rates>
+  <div class="rates">
   <h2 class="BT"> Browsing rates:</h2>
-<ul class="BR">    
+    <h2 class="BR">
+<ul>    
 <li> sh10 =1hour </li>
 <li> sh20 =2hours </li>  
 <li> sh30 =3hours</li>
- etc...</li>
+ etc..
 </ul>
+    </h2>
   </div>
 <section class="lipa">
 <section class="top">
