@@ -13,12 +13,12 @@
   <div class="rates">
   <h2 class="BT"> Browsing rates:</h2>
     <h2 class="BR">
-<ul>    
+<ol>    
 <li> sh10 =1hour </li>
 <li> sh20 =2hours </li>  
 <li> sh30 =3hours</li>
  etc..
-</ul>
+</ol>
     </h2>
   </div>
 <section class="lipa">
@@ -29,15 +29,15 @@
 </section>
 </section>
   
-<h3>Enter amount and number</h3>
+<h3 class="BT">Enter amount and number</h3>
   <main> 
     
 
 <form id="paymentForm" method="post" action="./stk_initiate.php">
   
  <div class='glow'>
-  <label for="username">Username:(important*)</label>
-    <input type="text" id="username" name="username" placeholder="create username"><br><br>
+  <label for="username">create a temporary username for the session.</label>
+    <input type="text" id="username" name="username" placeholder="enter username"><br><br>
    <div id="usernameAvailability"></div> 
  </div>
  
@@ -405,7 +405,7 @@ text-decoration: underline #fff;
 }
 
 .BR {
-text-align: center;
+text-align: ;
 color:white;
 }
 .kindly {
