@@ -400,7 +400,7 @@ bottom: 3vh;
 
 .BAM{
 text-align: center;
-color: green;
+color: lightgreen;
 text-decoration: underline #fff;
 }
 
