@@ -29,7 +29,7 @@
 </section>
 </section>
   
-<h3 class="BT">Enter amount and number</h3>
+<h3 class="BAM">Enter amount and number</h3>
   <main> 
     
 
@@ -397,6 +397,12 @@ bottom: 3vh;
   color: red;
 }
 
+
+.BAM{
+text-align: center;
+color: green;
+text-decoration: underline #fff;
+}
 
 .BT {
 text-align: center;
