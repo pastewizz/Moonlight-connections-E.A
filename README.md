@@ -452,34 +452,33 @@ padding: 30px;
   
 </style>
 
-<script> 
-  document.getElementById('paymentForm').addEventListener('submit', function(event) {
+  <script> 
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
-
-
-
-  // Check if username is filled and at least 4 characters long
-  if (username.length < 4) {
-    document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
-  }
-
-  // Check if phone number has 10 characters
-  if (phoneNumber.length !== 10) {
-    alert("Mobile number must be 10 digits long.");
-    return;
-  }
-
-  // Check if amount is 10 or above
-  if (amount < 10) {
-    alert("Amount must be 10 or above.");
-    return;
-  }
 
   // Get input values
   var username = document.getElementById('username').value;
   var phone = document.getElementById('phone').value;
   var amount = document.getElementById('amount').value;
-  
+
+  // Check if username is filled and at least 4 characters long
+  if (username.length < 4) {
+    document.getElementById('usernameAvailability').innerText = 'Username must be at least 4 characters long';
+    return; // Stop further processing
+  }
+
+  // Check if phone number has 10 characters
+  if (phone.length !== 10) {
+    alert("Mobile number must be 10 digits long.");
+    return; // Stop further processing
+  }
+
+  // Check if amount is 10 or above
+  if (amount < 10) {
+    alert("Amount must be 10 or above.");
+    return; // Stop further processing
+  }
+
   // Send data to backend script
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'backend_script.php', true);
@@ -501,5 +500,6 @@ padding: 30px;
   };
   xhr.send('username=' + encodeURIComponent(username) + '&phone=' + encodeURIComponent(phone) + '&amount=' + encodeURIComponent(amount));
 });
+</script>
 
-      </script>
+      
