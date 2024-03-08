@@ -1,4 +1,4 @@
-ok
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -456,10 +456,7 @@ padding: 30px;
   document.getElementById('paymentForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
 
-  // Get input values
-  var username = document.getElementById('username').value;
-  var phone = document.getElementById('phone').value;
-  var amount = document.getElementById('amount').value;
+
 
   // Check if username is filled and at least 4 characters long
   if (username.length < 4) {
@@ -478,6 +475,11 @@ padding: 30px;
     return;
   }
 
+  // Get input values
+  var username = document.getElementById('username').value;
+  var phone = document.getElementById('phone').value;
+  var amount = document.getElementById('amount').value;
+  
   // Send data to backend script
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'backend_script.php', true);
